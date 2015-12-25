@@ -4,7 +4,7 @@
   "description": "Simple template, replacing string with multiple matches",
   "main": "index.js",
   "scripts": {
-    "test": " "
+    "test": "node node_modules/wps/template/test  "
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,21 @@
   "bugs": {
     "url": "https://github.com/aunz/simple-template/issues"
   },
-  "homepage": "https://github.com/aunz/simple-template#readme"
+  "homepage": "https://github.com/aunz/simple-template#readme",
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
+  },
+  "devDependencies": {
+    "raw-loader": "^0.5.1",
+    "tap-dot": "^1.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.2.2",
+    "wps": "0.0.3"
+  }
 }
