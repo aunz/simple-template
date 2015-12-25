@@ -1,0 +1,22 @@
+{
+  "name": "@aunz/simple-template",
+  "version": "0.0.1",
+  "description": "Simple template, replacing string with multiple matches",
+  "main": "index.js",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aunz/simple-template.git"
+  },
+  "keywords": [
+    "template"
+  ],
+  "author": "KN <aunz10@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aunz/simple-template/issues"
+  },
+  "homepage": "https://github.com/aunz/simple-template#readme"
+}
