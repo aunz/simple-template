@@ -1,6 +1,6 @@
 {
   "name": "@aunz/simple-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple template, replacing string with multiple matches",
   "jsnext:main": "index.js",
   "main": "lib/index.js",
