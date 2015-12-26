@@ -2,9 +2,15 @@
   "name": "@aunz/simple-template",
   "version": "0.0.1",
   "description": "Simple template, replacing string with multiple matches",
-  "main": "index.js",
+  "jsnext:main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "node node_modules/wps/template/test  "
+    "test": "node tool/test",
+    "dev": "node tool/dev",
+    "bundle": "node tool/bundle",
+    "build": "babel src -d lib",
+    "clean": "rm -rf build && rm -rf test/build",
+    "prepublish": "npm run clean && npm test && npm run bundle && npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,6 +35,7 @@
     ]
   },
   "devDependencies": {
+    "babel-cli": "^6.3.15",
     "raw-loader": "^0.5.1",
     "tap-dot": "^1.0.1",
     "tap-spec": "^4.1.1",

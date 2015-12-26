@@ -8,7 +8,7 @@
  * // return "My name is kaka, 11 years old."
  */
 
-export default (string,replacement) => {
+export default (string,replacement) => {	
 	const map = Object.keys(replacement).reduce((p,n) => {		
 		return {...p,['{{'+n+'}}']:replacement[n]}
 	},{})	
@@ -17,4 +17,4 @@ export default (string,replacement) => {
 	return string.replace(re,(match)=>{		
 		return map[match]
 	})
-} 
+}

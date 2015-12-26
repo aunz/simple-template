@@ -1,6 +1,6 @@
 import test from 'tape'
 
-import template from '../index.js'
+import template from '../src/index.js'
 
 // var test = require('tape')
 
