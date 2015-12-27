@@ -8,7 +8,7 @@ npm i @aunz/simple-template -S
 * usage
 ```jsx
 import template from '@aunz/simple-template'
-  name: 'Kitty',
+
 const text = template(`Eat {{fruit}} a {{duration}}, keep {{someone}} away`, {
 	fruit: 'banana',
 	duration: 'day',
