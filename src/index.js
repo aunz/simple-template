@@ -8,13 +8,18 @@
  * // return "My name is kaka, 11 years old."
  */
 
-export default (string,replacement) => {	
-	const map = Object.keys(replacement).reduce((p,n) => {		
-		return {...p,['{{'+n+'}}']:replacement[n]}
-	},{})	
+export default (string,replacement) => {
+	let keys = Object.keys(replacement),
+	  l = keys.length,
+	  map = {},
+	  re = ''
+
+	while (l--) {
+		map['{{'+keys[l]+'}}'] = replacement[keys[l]]
+		re += '{{'+keys[l]+'}}'
+		re += l ? '|' : ''		
+	}
 	
-	const re = new RegExp(Object.keys(map).join('|'),'g')
-	return string.replace(re,(match)=>{		
-		return map[match]
-	})
+	re = new RegExp(re,'g')
+	return string.replace(re, match => map[match] )
 }

@@ -2,29 +2,28 @@ import test from 'tape'
 
 import template from '../src/index.js'
 
-// var test = require('tape')
-
-
-test('should throw', function (t) {	
-  t.throws(()=>{template()})
-  t.throws(()=>{template(null,null)})
-  t.throws(()=>{template(null,{})})
-  t.end()
+test('should throw', function ({throws,end}) {	
+  throws(()=>{template()})
+  throws(()=>{template(null,null)})
+  throws(()=>{template(null,{})})
+  end()
 })
 
-test('string replacement', function (t) {	
-	let actual = template(`My name is {{name}}, {{age}} years old, from {{place}}.`, {name:'kaka', age: 11, place: 'earth'})
-  t.equal(actual,'My name is kaka, 11 years old, from earth.')
+test('string replacement', function ({equal,end}) {	
+  let actual
   
-  actual = template(`{{n}}la{{n}}la{{n}}`,{n:3,m:2})
-  t.equal(actual,`3la3la3`)
-
   actual = template(`{{n}}la{{n}}la{{n}}`,{n:3,n:4})
-  t.equal(actual,`4la4la4`)
+  equal(actual,`4la4la4`,'If multiple only take the last')
 
 	actual = template(`{{ m }}`,{m:2})
-  t.equal(actual,`{{ m }}`)
-  
+  equal(actual,`{{ m }}`,'no space')
 
-  t.end()
+  actual = template(`Eat {{fruit}} a {{duration}}, keep {{someone}} away`,{
+    fruit: 'banana',
+    duration: 'day',
+    someone: 'doctors'
+  })
+  equal(actual,'Eat banana a day, keep doctors away')
+
+  end()
 })
